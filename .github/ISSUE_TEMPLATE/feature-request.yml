@@ -1,0 +1,30 @@
+name: "🚀 Feature Request"
+description: Suggest an improvement for ACAP
+labels: ['enhancement']
+body:
+  - type: textarea
+    attributes:
+      label: Problem
+      description: What is the current limitation or problem?
+      placeholder: "e.g. Hard to track rainfall across provinces..."
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Solution
+      description: What functionality should be added?
+      placeholder: "e.g. Add a summary table to the dashboard..."
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Technical Details
+      description: Any specific API, Database, or UI requirements?
+    validations:
+      required: false
+  - type: textarea
+    attributes:
+      label: Context
+      description: Screenshots, links, or additional info.
+    validations:
+      required: false
