@@ -2,10 +2,37 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-static';
+
+export const metadata = {
+  title: 'Blog | Angelo Consulta',
+  description: 'Read articles, tutorials, and insights about web development, modern technologies, and best practices in full-stack development.',
+  openGraph: {
+    title: 'Blog | Angelo Consulta',
+    description: 'Read articles, tutorials, and insights about web development, modern technologies, and best practices in full-stack development.',
+    url: 'https://angeloconsulta-portfolio.vercel.app/blog',
+    type: 'website',
+    images: [
+      {
+        url: '/profile.png',
+        width: 800,
+        height: 520,
+        alt: 'Angelo Consulta Blog',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Blog | Angelo Consulta',
+    description: 'Read articles, tutorials, and insights about web development, modern technologies, and best practices in full-stack development.',
+    images: ['/profile.png'],
+  },
+  alternates: {
+    canonical: 'https://angeloconsulta-portfolio.vercel.app/blog',
+  },
+};
 
 function getAllTags(posts) {
   const tagSet = new Set();

@@ -4,12 +4,12 @@ import MobileNav from "../components/MobileNav";
 import ContactForm from "../components/ContactForm";
 import ScrollToTop from "../components/ScrollToTop";
 import ThemeToggleButton from "../components/ThemeToggleButton";
+import StructuredData from "../components/StructuredData";
 import { FaReact, FaNodeJs, FaPython, FaDocker, FaPhp, FaLaravel, FaJava, FaGithub, FaLinkedin, FaFacebook, FaDownload, FaShoppingCart, FaTasks, FaRobot, FaFileAlt, FaDesktop, FaBrain, FaPaintBrush, FaGlobe, FaJs, FaEnvelope, FaPhone, FaMapMarkerAlt, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { TbBrandNextjs, TbBrandTypescript, TbBrandCpp } from 'react-icons/tb';
 import { BiLogoPostgresql, BiLogoSpringBoot } from 'react-icons/bi';
 import { SiTailwindcss, SiDjango, SiMysql } from 'react-icons/si';
 import { motion } from "framer-motion";
-import Head from 'next/head';
 import Link from "next/link";
 
 const languagesAndDatabases = [
@@ -37,24 +37,7 @@ const frameworksAndTools = [
 export default function PageClient() {
   return (
     <>
-      <Head>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "Angelo Consulta",
-            "url": "https://angeloconsulta-portfolio.vercel.app/",
-            "image": "https://angeloconsulta-portfolio.vercel.app/profile.png",
-            "sameAs": [
-              "https://github.com/AngeloConsulta",
-              "https://www.linkedin.com/in/angelo-consulta-2b4ba1302",
-              "https://www.facebook.com/thoyzkie.atlusnoc"
-            ],
-            "jobTitle": "Full-Stack Developer",
-            "description": "Portfolio of Angelo Consulta, a full-stack developer specializing in modern web and cloud technologies."
-          })
-        }} />
-      </Head>
+      <StructuredData />
       <div className="min-h-screen bg-background">
         {/* Navigation */}
         <nav className="fixed top-0 w-full z-50 glass">
