@@ -13,10 +13,40 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Angelo's Portfolio",
-  description: "The portfolio of Angelo, a Full-Stack Developer.",
+  metadataBase: new URL('https://angeloconsulta-portfolio.vercel.app/'),
+  title: "Angelo Consulta | Full-Stack Developer Portfolio",
+  description: "Portfolio of Angelo Consulta, a full-stack developer specializing in modern web and cloud technologies. View projects, skills, testimonials, and contact information.",
   icons: {
     icon: '/Tech-Angelo-logo.png',
+  },
+  verification: {
+    google: 'A9KEF2G0tuqglXx6Lm2bMjecO_LaxTYOIySye-aOQr0',
+  },
+  openGraph: {
+    title: "Angelo Consulta | Full-Stack Developer Portfolio",
+    description: "Portfolio of Angelo Consulta, a full-stack developer specializing in modern web and cloud technologies. View projects, skills, testimonials, and contact information.",
+    url: "https://angeloconsulta-portfolio.vercel.app/",
+    siteName: "Angelo Consulta Portfolio",
+    images: [
+      {
+        url: "/profile.png",
+        width: 800,
+        height: 520,
+        alt: "Angelo Consulta Profile Photo",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Angelo Consulta | Full-Stack Developer Portfolio",
+    description: "Portfolio of Angelo Consulta, a full-stack developer specializing in modern web and cloud technologies.",
+    images: ["/profile.png"],
+    creator: "@yourtwitterhandle"
+  },
+  alternates: {
+    canonical: "https://angeloconsulta-portfolio.vercel.app/",
   },
 };
 
