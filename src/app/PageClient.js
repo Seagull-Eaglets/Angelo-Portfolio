@@ -88,18 +88,21 @@ export default function PageClient() {
                 </div>
               </div>
           </div>
-          <div className="bg-background flex items-end justify-center p-8 relative">
-            <div className="relative w-full max-w-lg mx-auto">
-              <Image
-                src="/profile.png"
-                alt="A photo of Angelo"
-                width={500}
-                height={520}
-                className="rounded-lg object-cover object-top"
-                priority
-              />
-            </div>
+         <div className="bg-background flex items-center justify-center p-8 relative min-h-[50vh]">
+          <div className="relative w-full max-w-md mx-auto overflow-hidden rounded-[24px] shadow-[0_25px_60px_rgba(0,0,0,0.18)]">
+            <Image
+              src="/profile.png"
+              alt="A photo of Angelo"
+              width={500}
+              height={520}
+              priority
+              sizes="(max-width: 768px) 100vw, 33vw"
+              className="w-full h-auto max-h-[72vh] object-cover object-center"
+            />
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-background/85 via-background/20 to-transparent" />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background/90 via-background/30 to-transparent" />
           </div>
+        </div>
         </section>
 
         {/* Projects Section (Case Studies) */}
