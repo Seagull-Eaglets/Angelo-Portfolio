@@ -431,8 +431,8 @@ export default function PageClient() {
                 </div>
                 <div className="mt-8">
                     <a
-                      href="/Software Developer Angelo_Cuya_Consulta.pdf"
-                      download="Software Developer Angelo_Cuya_Consulta.pdf"
+                      href="/Software_Developer_Angelo_Cuya_Consulta.pdf"
+                      download="Software_Developer_Angelo_Cuya_Consulta.pdf"
                       className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-6 py-3 rounded-full font-medium hover:bg-primary/90 transition-colors"
                     >
                       <FaDownload />
