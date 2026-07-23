@@ -1,10 +1,14 @@
 name: Lint Files
-
+# Run on All Branches except when merging
 on:
   push:
     branches-ignore:
       - main
       - dev
+    pull_request:
+      branches:
+        - main
+        - dev
 
 jobs:
   lint-my-portfolio:
