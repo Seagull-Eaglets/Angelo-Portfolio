@@ -1,16 +1,39 @@
-'use client';
-import Image from "next/image";
-import MobileNav from "../components/MobileNav";
-import ContactForm from "../components/ContactForm";
-import ScrollToTop from "../components/ScrollToTop";
-import ThemeToggleButton from "../components/ThemeToggleButton";
-import StructuredData from "../components/StructuredData";
-import { FaReact, FaNodeJs, FaPython, FaDocker, FaPhp, FaLaravel, FaJava, FaGithub, FaLinkedin, FaFacebook, FaDownload, FaShoppingCart, FaTasks, FaRobot, FaFileAlt, FaDesktop, FaBrain, FaPaintBrush, FaGlobe, FaJs, FaEnvelope, FaPhone, FaMapMarkerAlt, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import { TbBrandNextjs, TbBrandTypescript, TbBrandCpp } from 'react-icons/tb';
-import { BiLogoPostgresql, BiLogoSpringBoot } from 'react-icons/bi';
-import { SiTailwindcss, SiDjango, SiMysql } from 'react-icons/si';
-import { motion } from "framer-motion";
-import Link from "next/link";
+'use client'
+import Image from 'next/image'
+import MobileNav from '../components/MobileNav'
+import ContactForm from '../components/ContactForm'
+import ScrollToTop from '../components/ScrollToTop'
+import ThemeToggleButton from '../components/ThemeToggleButton'
+import StructuredData from '../components/StructuredData'
+import { 
+  FaReact, 
+  FaNodeJs, 
+  FaPython, 
+  FaDocker, 
+  FaPhp, 
+  FaLaravel, 
+  FaJava, 
+  FaGithub, 
+  FaLinkedin, 
+  FaFacebook, 
+  FaDownload, 
+  FaTasks, 
+  FaFileAlt, 
+  FaDesktop, 
+  FaBrain, 
+  FaGlobe, 
+  FaJs, 
+  FaEnvelope, 
+  FaPhone, 
+  FaMapMarkerAlt, 
+  FaChevronLeft, 
+  FaChevronRight 
+
+} from 'react-icons/fa'
+import { TbBrandNextjs} from 'react-icons/tb'
+import { SiTailwindcss, SiMysql } from 'react-icons/si'
+import { motion } from 'framer-motion'
+import Link from 'next/link'
 
 const languagesAndDatabases = [
   { name: 'Python', icon: FaPython, level: 75, color: '#3776AB' },
@@ -21,7 +44,7 @@ const languagesAndDatabases = [
   // { name: 'C++', icon: TbBrandCpp, level: 78, color: '#00599C' },
   // { name: 'PostgreSQL', icon: BiLogoPostgresql, level: 80, color: '#4169E1' },
   { name: 'MySQL', icon: SiMysql, level: 85, color: '#F29111' },
-];
+]
 
 const frameworksAndTools = [
   { name: 'React', icon: FaReact, level: 90, color: '#61DAFB' },
@@ -32,7 +55,7 @@ const frameworksAndTools = [
   // { name: 'Spring Boot', icon: BiLogoSpringBoot, level: 82, color: '#6DB33F' },
   { name: 'Tailwind CSS', icon: SiTailwindcss, level: 95, color: '#06B6D4' },
   { name: 'Docker', icon: FaDocker, level: 75, color: '#2496ED' },
-];
+]
 
 export default function PageClient() {
   return (
@@ -301,8 +324,8 @@ export default function PageClient() {
                 style={{ marginLeft: '-1.5rem' }}
                 aria-label="Scroll testimonials left"
                 onClick={() => {
-                  const container = document.getElementById('testimonial-carousel');
-                  if (container) container.scrollBy({ left: -340, behavior: 'smooth' });
+                  const container = document.getElementById('testimonial-carousel')
+                  if (container) container.scrollBy({ left: -340, behavior: 'smooth' })
                 }}
               >
                 <FaChevronLeft className="text-2xl" />
@@ -314,8 +337,8 @@ export default function PageClient() {
                 style={{ marginRight: '-1.5rem' }}
                 aria-label="Scroll testimonials right"
                 onClick={() => {
-                  const container = document.getElementById('testimonial-carousel');
-                  if (container) container.scrollBy({ left: 340, behavior: 'smooth' });
+                  const container = document.getElementById('testimonial-carousel')
+                  if (container) container.scrollBy({ left: 340, behavior: 'smooth' })
                 }}
               >
                 <FaChevronRight className="text-2xl" />
@@ -332,7 +355,7 @@ export default function PageClient() {
                   {
                     name: 'Mon Carlo Mangente',
                     title: 'Co - IT Programmer',
-                    quote: "Angelo's technical skills and commitment to quality are impressive. He delivered a robust and efficient solution that perfectly met our needs.",
+                    quote: 'Angelo\'s technical skills and commitment to quality are impressive. He delivered a robust and efficient solution that perfectly met our needs.',
                     avatar: '👨‍💻'
                   },
                   // {
@@ -344,7 +367,7 @@ export default function PageClient() {
                   {
                     name: 'Mary Joy Señido',
                     title: 'Department of Agriculture - AMIA Admin',
-                    quote: "Incredible attention to detail and a passion for creating a great user experience. A pleasure to work with.",
+                    quote: 'Incredible attention to detail and a passion for creating a great user experience. A pleasure to work with.',
                     avatar: '👩‍🎨'
                   },
                   // {
@@ -356,13 +379,13 @@ export default function PageClient() {
                   {
                     name: 'Ramcel Abio',
                     title: 'Department of Agriculture - AMIA Admin',
-                    quote: "Working with Angelo was a seamless experience. His expertise and dedication greatly contributed to the success of our projects.",
+                    quote: 'Working with Angelo was a seamless experience. His expertise and dedication greatly contributed to the success of our projects.',
                     avatar: '👨‍🌾'
                   },
                   {
                     name: 'Jowie P. Diaz',
                     title: 'Department of Agriculture - AMIA Technical Staff',
-                    quote: "Angelo's expertise and dedication made a significant impact on our team's success. Highly recommended!",
+                    quote: 'Angelo\'s expertise and dedication made a significant impact on our team\'s success. Highly recommended!',
                     avatar: '👨‍💼'
                   }
                 ].map((testimonial, index) => (
@@ -457,5 +480,5 @@ export default function PageClient() {
         <ScrollToTop />
       </div>
     </>
-  );
+  )
 } 
