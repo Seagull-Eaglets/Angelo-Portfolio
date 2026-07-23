@@ -1,5 +1,5 @@
-"use client";
-import Link from 'next/link';
+'use client'
+import Link from 'next/link'
 
 export default function MyFirstPost() {
   return (
@@ -12,5 +12,5 @@ export default function MyFirstPost() {
       </article>
       <Link href="/blog" className="text-primary hover:underline">← Back to Blog</Link>
     </div>
-  );
+  )
 } 

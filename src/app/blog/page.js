@@ -1,10 +1,9 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
-import Link from 'next/link';
-
-export const runtime = 'nodejs';
-export const dynamic = 'force-static';
+import fs from 'fs'
+import path from 'path'
+import matter from 'gray-matter'
+import Link from 'next/link'
+export const runtime = 'nodejs'
+export const dynamic = 'force-static'
 
 export const metadata = {
   title: 'Blog | Angelo Consulta',
@@ -32,60 +31,60 @@ export const metadata = {
   alternates: {
     canonical: 'https://angeloconsulta-portfolio.vercel.app/blog',
   },
-};
+}
 
 function getAllTags(posts) {
-  const tagSet = new Set();
+  const tagSet = new Set()
   posts.forEach(post => {
     if (post.tags && Array.isArray(post.tags)) {
-      post.tags.forEach(tag => tagSet.add(tag));
+      post.tags.forEach(tag => tagSet.add(tag))
     }
-  });
-  return Array.from(tagSet).sort();
+  })
+  return Array.from(tagSet).sort()
 }
 
 function filterPosts(posts, selectedTag, searchQuery) {
-  let filtered = posts;
+  let filtered = posts
   if (selectedTag) {
-    filtered = filtered.filter(post => post.tags && post.tags.includes(selectedTag));
+    filtered = filtered.filter(post => post.tags && post.tags.includes(selectedTag))
   }
   if (searchQuery) {
-    const q = searchQuery.toLowerCase();
+    const q = searchQuery.toLowerCase()
     filtered = filtered.filter(post =>
       post.title.toLowerCase().includes(q) ||
       post.summary.toLowerCase().includes(q) ||
       (post.tags && post.tags.some(tag => tag.toLowerCase().includes(q)))
-    );
+    )
   }
-  return filtered;
+  return filtered
 }
 
 function getReadingTime(text) {
-  const words = text ? text.split(/\s+/).length : 0;
-  const minutes = Math.max(1, Math.round(words / 200));
-  return `~${minutes} min read`;
+  const words = text ? text.split(/\s+/).length : 0
+  const minutes = Math.max(1, Math.round(words / 200))
+  return `~${minutes} min read`
 }
 
 export default async function Blog({ searchParams }) {
-  const postsDirectory = path.join(process.cwd(), 'src/blog-posts');
-  const filenames = fs.readdirSync(postsDirectory);
+  const postsDirectory = path.join(process.cwd(), 'src/blog-posts')
+  const filenames = fs.readdirSync(postsDirectory)
   const posts = filenames.map(filename => {
-    const filePath = path.join(postsDirectory, filename);
-    const fileContents = fs.readFileSync(filePath, 'utf8');
-    const { data, content } = matter(fileContents);
+    const filePath = path.join(postsDirectory, filename)
+    const fileContents = fs.readFileSync(filePath, 'utf8')
+    const { data, content } = matter(fileContents)
     return {
       slug: filename.replace(/\.md$/, ''),
       ...data,
       content,
       readingTime: getReadingTime(content),
-    };
-  }).sort((a, b) => new Date(b.date) - new Date(a.date));
+    }
+  }).sort((a, b) => new Date(b.date) - new Date(a.date))
 
-  const allTags = getAllTags(posts);
-  const selectedTag = searchParams?.tag;
-  const searchQuery = searchParams?.q || '';
-  const filteredPosts = filterPosts(posts, selectedTag, searchQuery);
-  const recentPosts = posts.slice(0, 3);
+  const allTags = getAllTags(posts)
+  const selectedTag = searchParams?.tag
+  const searchQuery = searchParams?.q || ''
+  const filteredPosts = filterPosts(posts, selectedTag, searchQuery)
+  const recentPosts = posts.slice(0, 3)
 
   return (
     <div className="max-w-5xl mx-auto py-20 px-4 grid grid-cols-1 lg:grid-cols-4 gap-12">
@@ -176,5 +175,5 @@ export default async function Blog({ searchParams }) {
         </div>
       </aside>
     </div>
-  );
+  )
 } 

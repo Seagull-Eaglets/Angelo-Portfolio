@@ -1,19 +1,19 @@
-"use client";
+'use client'
 
-import { useState, useEffect } from 'react';
-import { useTheme } from 'next-themes';
-import { FaSun, FaMoon } from 'react-icons/fa';
+import { useState, useEffect } from 'react'
+import { useTheme } from 'next-themes'
+import { FaSun, FaMoon } from 'react-icons/fa'
 
 const ThemeToggleButton = () => {
-  const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false)
+  const { theme, setTheme } = useTheme()
 
   useEffect(() => {
-    setMounted(true);
-  }, []);
+    setMounted(true)
+  }, [])
 
   if (!mounted) {
-    return null;
+    return null
   }
 
   return (
@@ -24,7 +24,7 @@ const ThemeToggleButton = () => {
     >
       {theme === 'dark' ? <FaSun className="text-yellow-400" /> : <FaMoon className="text-blue-500" />}
     </button>
-  );
-};
+  )
+}
 
-export default ThemeToggleButton; 
+export default ThemeToggleButton 

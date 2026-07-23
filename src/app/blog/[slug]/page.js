@@ -1,21 +1,21 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
-import { MDXRemote } from 'next-mdx-remote/rsc';
-import Link from 'next/link';
-import rehypeHighlight from 'rehype-highlight';
+import fs from 'fs'
+import path from 'path'
+import matter from 'gray-matter'
+import { MDXRemote } from 'next-mdx-remote/rsc'
+import Link from 'next/link'
+import rehypeHighlight from 'rehype-highlight'
 
-export const runtime = 'nodejs';
+export const runtime = 'nodejs'
 
-export const dynamic = 'force-static';
+export const dynamic = 'force-static'
 
 export async function generateMetadata({ params }) {
-  const { slug } = params;
-  const fileName = slug.endsWith('.md') ? slug : `${slug}.md`;
-  const filePath = path.join(process.cwd(), 'src/blog-posts', fileName);
-  const fileContents = fs.readFileSync(filePath, 'utf8');
-  const { data } = matter(fileContents);
-  const url = `https://angeloconsulta-portfolio.vercel.app/blog/${slug}`;
+  const { slug } = params
+  const fileName = slug.endsWith('.md') ? slug : `${slug}.md`
+  const filePath = path.join(process.cwd(), 'src/blog-posts', fileName)
+  const fileContents = fs.readFileSync(filePath, 'utf8')
+  const { data } = matter(fileContents)
+  const url = `https://angeloconsulta-portfolio.vercel.app/blog/${slug}`
   return {
     title: data.title,
     description: data.summary || data.description || '',
@@ -42,33 +42,33 @@ export async function generateMetadata({ params }) {
     alternates: {
       canonical: url,
     },
-  };
+  }
 }
 
 export default async function BlogPost({ params }) {
-  const { slug } = params;
-  const fileName = slug.endsWith('.md') ? slug : `${slug}.md`;
-  const filePath = path.join(process.cwd(), 'src/blog-posts', fileName);
-  const fileContents = fs.readFileSync(filePath, 'utf8');
-  const { data, content } = matter(fileContents);
-  const url = `https://angeloconsulta-portfolio.vercel.app/blog/${slug}`;
+  const { slug } = params
+  const fileName = slug.endsWith('.md') ? slug : `${slug}.md`
+  const filePath = path.join(process.cwd(), 'src/blog-posts', fileName)
+  const fileContents = fs.readFileSync(filePath, 'utf8')
+  const { data, content } = matter(fileContents)
+  const url = `https://angeloconsulta-portfolio.vercel.app/blog/${slug}`
 
   return (
     <>
       <Head>
         <script type="application/ld+json" dangerouslySetInnerHTML={{
           __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BlogPosting",
-            "headline": data.title,
-            "description": data.summary || data.description || '',
-            "image": data.image ? `https://angeloconsulta-portfolio.vercel.app/${data.image}` : "https://angeloconsulta-portfolio.vercel.app/profile.png",
-            "author": {
-              "@type": "Person",
-              "name": "Angelo Consulta"
+            '@context': 'https://schema.org',
+            '@type': 'BlogPosting',
+            'headline': data.title,
+            'description': data.summary || data.description || '',
+            'image': data.image ? `https://angeloconsulta-portfolio.vercel.app/${data.image}` : 'https://angeloconsulta-portfolio.vercel.app/profile.png',
+            'author': {
+              '@type': 'Person',
+              'name': 'Angelo Consulta'
             },
-            "datePublished": data.date,
-            "url": url
+            'datePublished': data.date,
+            'url': url
           })
         }} />
       </Head>
@@ -115,5 +115,5 @@ export default async function BlogPost({ params }) {
         </div>
       </div>
     </>
-  );
+  )
 } 

@@ -1,4 +1,4 @@
-'use client';
+'use client'
 
 export default function StructuredData() {
   const personSchema = {
@@ -26,7 +26,7 @@ export default function StructuredData() {
       'Web Development',
       'Cloud Technologies',
     ],
-  };
+  }
 
   const websiteSchema = {
     '@context': 'https://schema.org',
@@ -42,7 +42,7 @@ export default function StructuredData() {
       },
       'query-input': 'required name=search_term_string',
     },
-  };
+  }
 
   return (
     <>
@@ -55,5 +55,5 @@ export default function StructuredData() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
       />
     </>
-  );
+  )
 }
