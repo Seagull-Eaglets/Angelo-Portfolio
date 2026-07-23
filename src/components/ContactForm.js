@@ -1,40 +1,40 @@
-'use client';
+'use client'
 
-import { useState } from 'react';
+import { useState } from 'react'
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null);
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState(null)
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value } = e.target
     setFormData(prev => ({
       ...prev,
       [name]: value
-    }));
-  };
+    }))
+  }
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus(null);
+    e.preventDefault()
+    setIsSubmitting(true)
+    setSubmitStatus(null)
 
     // Simulate form submission
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', message: '' });
+      await new Promise(resolve => setTimeout(resolve, 1000))
+      setSubmitStatus('success')
+      setFormData({ name: '', email: '', message: '' })
     } catch (error) {
-      setSubmitStatus('error');
+      setSubmitStatus('error')
     } finally {
-      setIsSubmitting(false);
+      setIsSubmitting(false)
     }
-  };
+  }
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
@@ -95,5 +95,5 @@ export default function ContactForm() {
         {isSubmitting ? 'Sending...' : 'Send Message'}
       </button>
     </form>
-  );
+  )
 } 

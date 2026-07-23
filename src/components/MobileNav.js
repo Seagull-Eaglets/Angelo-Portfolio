@@ -1,18 +1,18 @@
-'use client';
+'use client'
 
-import { useState } from 'react';
-import ThemeToggleButton from "./ThemeToggleButton";
+import { useState } from 'react'
+import ThemeToggleButton from './ThemeToggleButton'
 
 export default function MobileNav() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+    setIsOpen(!isOpen)
+  }
 
   const closeMenu = () => {
-    setIsOpen(false);
-  };
+    setIsOpen(false)
+  }
 
   return (
     <div className="md:hidden">
@@ -90,5 +90,5 @@ export default function MobileNav() {
         </div>
       )}
     </div>
-  );
+  )
 } 

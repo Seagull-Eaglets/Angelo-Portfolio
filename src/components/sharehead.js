@@ -1,15 +1,13 @@
-import Head from "next/head"
-
-const BASE_URL = "https://angeloconsulta-portfolio.vercel.app"
+const BASE_URL = 'https://angeloconsulta-portfolio.vercel.app'
 
 export default function ShareHead({
-  title = "Angelo Consulta Portfolio",
-  description = "Welcome to my portfolio and blog where I share projects, insights, and experiences.",
+  title = 'Angelo Consulta Portfolio',
+  description = 'Welcome to my portfolio and blog where I share projects, insights, and experiences.',
   url = BASE_URL,
   image = `${BASE_URL}/profile.png`,
   imageLogo = `${BASE_URL}/Tech-Angelo-logo.png`,
-  imageAlt = "Angelo Consulta profile",
-  siteName = "Angelo Consulta Portfolio",
+  imageAlt = 'Angelo Consulta profile',
+  siteName = 'Angelo Consulta Portfolio',
   canonicalURL,
 }) {
   return (
