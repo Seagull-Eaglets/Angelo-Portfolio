@@ -8,17 +8,19 @@
 # increase resources.
 
 services:
-- type: web
-  plan: free
-  # This is the runtime for services that pull a prebuilt Docker image
-  runtime: image
-  # You can give the service any name
-  name: n8n-service
-  image:
-  # Pulls the n8n image tagged as latest from Docker Hub
-   url: docker.io/n8nio/n8n:latest
-  # All environment variables defined below are required!
-  # You can define additional environment variables as needed.
+  - type: web
+    plan: free
+    # This is the runtime for services that pull a prebuilt Docker image
+    runtime: image
+    # You can give the service any name
+    name: n8n-service
+    image:
+      # Pulls the n8n image tagged as latest from Docker Hub
+      url: docker.io/n8nio/n8n:latest
+
+    # All environment variables defined below are required!
+    #
+    # You can define additional environment variables as needed.
     envVars:
       # Generates a base64-encoded key for
       # encrypting credentials in n8n
@@ -60,4 +62,4 @@ databases:
     # increase the disk size to any multiple of 5 GB by
     # setting the `diskSizeGB` property.
     #
-    # diskSizeGB: 
+    # diskSizeGB: 5
