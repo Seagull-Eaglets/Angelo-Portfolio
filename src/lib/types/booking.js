@@ -1,7 +1,10 @@
 export const SERVICE_TYPES = Object.freeze({
-  WEBSITE: 'website',
-  WEB_APP: 'web_app',
-  N8N_AUTOMATION: 'n8n_automation',
+  WEBSITE: 'Website',
+  WEB_APP: 'Web App',
+  AUTOMATION: 'Automation',
+  AI_INTEGRATION: 'AI Integration',
+  API_DEVELOPMENT_INTEGRATION: 'API Development & Integration',
+  CONSULTING: 'Software Consulting',
 })
 
-/** @typedef {'website' | 'web_app' | 'n8n_automation'} ServiceType */
+/** @typedef {'Website' | 'Web App' | 'Automation' | 'AI Integration' | 'API Development & Integration' | 'Software Consulting'} ServiceType */

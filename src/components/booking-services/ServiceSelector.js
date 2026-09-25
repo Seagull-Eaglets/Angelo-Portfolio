@@ -16,9 +16,24 @@ const services = [
     description: 'A custom application for your team or customers.',
   },
   {
-    type: SERVICE_TYPES.N8N_AUTOMATION,
-    title: 'N8N Automation',
-    description: 'Automated workflows that connect your tools and save time.',
+    type: SERVICE_TYPES.AUTOMATION,
+    title: 'Automation',
+    description: 'Automated workflows that connect your tools and save time (Cron Job and N8Ns).',
+  },
+  {
+    type: SERVICE_TYPES.AI_INTEGRATION,
+    title: 'AI Integration',
+    description: 'Integrate AI capabilities into your applications.',
+  },
+  {
+    type: SERVICE_TYPES.API_DEVELOPMENT_INTEGRATION,
+    title: 'API Development & Integration',
+    description: 'Develop and integrate REST APIs to connect your applications.',
+  },
+  {
+    type: SERVICE_TYPES.CONSULTING,
+    title: 'Software Consulting',
+    description: 'Software Consulting or Development Advisory Services',
   },
 ]
 
